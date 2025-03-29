@@ -1,0 +1,41 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Back to top button */
+.back-to-top {
+  @apply fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-sm font-semibold shadow-lg rounded;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
